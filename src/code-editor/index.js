@@ -141,11 +141,11 @@ export class CodeEditor {
 
     htmlCode += `<style>${idStyles}</style>`;
 
-    if (component.is('wrapper')) {
+    if (component.is('wrapper') && htmlCode !== '') {
       editor.DomComponents.getWrapper().set('content', '');
       editor.setComponents(htmlCode);
     } else {
-      editor.select(component.replaceWith(htmlCode));
+      htmlCode !== '' && editor.select(component.replaceWith(htmlCode));
     }
   }
 
@@ -222,9 +222,9 @@ export class CodeEditor {
     let html = '';
     if (opts.clearData) {
       if (componentEl.id === 'wrapper') {
-        component.components().forEach( element => {
+        component.components().forEach(element => {
           html += element.toHTML();
-        })
+        });
       } else {
         html = component.toHTML();
       }

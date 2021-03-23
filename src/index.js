@@ -26,11 +26,11 @@ export default (editor, opts = {}) => {
             //Used to remove css from the Selector Manager
             cleanCssBtn: true,
             //Save HTML button text
-            htmlBtnText: 'Applai',
+            htmlBtnText: 'Apply',
             //Save CSS button text
             cssBtnText: 'Apply',
             //Clean CSS button text
-            cleanCssBtnText: 'Delete'
+            cleanCssBtnText: 'Tidy CSS'
         },
         ...opts
     };
