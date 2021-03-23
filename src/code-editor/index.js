@@ -1,5 +1,5 @@
 //Original work Copyright (c) 2018, Duarte Henriques, https://github.com/portablemind/grapesjs-code-editor
-//Modified work Copyright (c) 2020, Brendon Ngirazi, 
+//Modified work Copyright (c) 2020, Brendon Ngirazi,
 //All rights reserved.
 
 import Split from 'split.js';
@@ -141,7 +141,12 @@ export class CodeEditor {
 
         htmlCode += `<style>${idStyles}</style>`;
 
-        editor.select(component.replaceWith(htmlCode));
+        if(component.is('wrapper')){
+            editor.DomComponents.getWrapper().set('content', '');
+            editor.setComponents(htmlCode);
+        } else {
+            editor.select(component.replaceWith(htmlCode));
+        }
     }
 
     updateCss() {

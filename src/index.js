@@ -18,7 +18,7 @@ export default (editor, opts = {}) => {
                 pn: '15%'
             },
             //Allow editing of javascript, set allowScripts to true for this to work
-            editJs: false,
+            editJs: true,
             //Remove component data eg data-gjs-type="..."
             clearData: false,
             //Code viewer options
@@ -26,7 +26,7 @@ export default (editor, opts = {}) => {
             //Used to remove css from the Selector Manager
             cleanCssBtn: true,
             //Save HTML button text
-            htmlBtnText: 'Apply',
+            htmlBtnText: 'Applai',
             //Save CSS button text
             cssBtnText: 'Apply',
             //Clean CSS button text

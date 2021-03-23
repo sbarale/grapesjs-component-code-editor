@@ -5,7 +5,7 @@
   "main": "dist/grapesjs-component-code-editor.min.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ju99ernaut/grapesjs-component-code-editor.git"
+    "url": "https://github.com/sbarale/grapesjs-component-code-editor.git"
   },
   "scripts": {
     "start": "grapesjs-cli serve",
