@@ -220,7 +220,11 @@ export class CodeEditor {
         // const html = opts.clearData ? component.toHTML() :
         //     (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
 
-        const html = (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
+        const html = opts.clearData ?  (componentEl.id === 'wrapper' ? componentEl.innerHTML : component.toHtml())  :
+            (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
+
+
+        // const html = (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
         !opts.clearData && componentEl.classList.add(`${pfx}selected`);
         result += html;
 
