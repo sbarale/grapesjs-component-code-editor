@@ -217,8 +217,10 @@ export class CodeEditor {
         const componentEl = component.getEl();
 
         !opts.clearData && componentEl.classList.remove(`${pfx}selected`);
-        const html = opts.clearData ? component.toHTML() :
-            (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
+        // const html = opts.clearData ? component.toHTML() :
+        //     (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
+
+        const html = (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
         !opts.clearData && componentEl.classList.add(`${pfx}selected`);
         result += html;
 
