@@ -220,7 +220,7 @@ export class CodeEditor {
         // const html = opts.clearData ? component.toHTML() :
         //     (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
 
-        const html = opts.clearData ?  (componentEl.id === 'wrapper' ? componentEl.innerHTML : component.toHtml())  :
+        const html = opts.clearData ?  (componentEl.id === 'wrapper' ? componentEl.innerHTML : component.toHTML())  :
             (componentEl.id === 'wrapper' ? componentEl.innerHTML : componentEl.outerHTML);
 
 
