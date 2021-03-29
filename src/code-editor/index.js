@@ -126,7 +126,7 @@ export class CodeEditor {
 
   updateHtml() {
     const { editor, component } = this;
-    let htmlCode = this.htmlCodeEditor.getContent().trim();
+    let htmlCode, newCode = this.htmlCodeEditor.getContent().trim();
     if (!htmlCode || htmlCode === this.previousHtmlCode) return;
     this.previousHtmlCode = htmlCode;
 
@@ -141,7 +141,7 @@ export class CodeEditor {
 
     htmlCode += `<style>${idStyles}</style>`;
 
-    if (component.is('wrapper') && htmlCode !== '') {
+    if (component.is('wrapper') && newCode !== '') {
       editor.DomComponents.getWrapper().set('content', '');
       editor.setComponents(htmlCode);
     } else {
