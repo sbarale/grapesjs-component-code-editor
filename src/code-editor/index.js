@@ -133,13 +133,13 @@ export class CodeEditor {
     let idStyles = '';
     this.cssCodeEditor
       .getContent()
-      .split(/(?<=}\n)/g)
+      .split(/(.*}\n)/g)
       .forEach(rule => {
         if (/^#/.test(rule))
-          idStyles += rule;
+          idStyles += rule + '}\n';
       });
-
     htmlCode += `<style>${idStyles}</style>`;
+    console.log(htmlCode);
 
     if (component.is('wrapper') && htmlCode !== '') {
       editor.DomComponents.getWrapper().set('content', '');
