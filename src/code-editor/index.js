@@ -139,7 +139,7 @@ export class CodeEditor {
           idStyles += rule + '}\n';
       });
     htmlCode += `<style>${idStyles}</style>`;
-    console.log(htmlCode);
+    // console.log(htmlCode);
 
     if (component.is('wrapper') && htmlCode !== '') {
       editor.DomComponents.getWrapper().set('content', '');
