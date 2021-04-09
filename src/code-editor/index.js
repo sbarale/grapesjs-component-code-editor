@@ -202,7 +202,8 @@ export class CodeEditor {
   updateEditorContents() {
     if (!this.isShowing) return;
 
-    this.component = this.editor.getSelected();
+    // Let's get the root if nothing is selected
+    this.component = this.editor.getSelected() || this.editor.getWrapper();
     if (this.component) {
       this.htmlCodeEditor.setContent(this.getComponentHtml(this.component));
       this.cssCodeEditor.setContent(this.editor.CodeManager.getCode(this.component, 'css', {
